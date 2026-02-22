@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "SUA_API_KEY_AQUI",
+  apiKey: "AIzaSyBkCUaifbv9gqC5G7LocOWYejX4Da3KBfU",
   authDomain: "angendaflex.firebaseapp.com",
   projectId: "angendaflex",
   storageBucket: "angendaflex.firebasestorage.app",
