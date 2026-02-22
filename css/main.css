@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto+Flex:wght@100;300;400;500;700;900&display=swap');
+@import "./root.css";
+@import "./color.css";
+@import "./../components/footer.component/footer.component.css";

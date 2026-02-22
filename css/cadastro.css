@@ -1,0 +1,82 @@
+.registration-section {
+    
+    padding: 30px;
+    border-radius: 15px;
+    margin: 110px auto 50px;
+    text-align: center;
+    border: solid 3px var(--primary);
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(64, 30, 54, 0.2);
+    min-height: 500px;
+       
+}
+
+.registration-section h2 { 
+    margin-bottom: 25px;
+    font-family: var(--font-title);
+    color: var(--secondary);
+    font-size: 36px;
+}
+
+.registration-section label {
+    font-family: var(--font-content);
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.btn-cadastrar {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-content);
+    transition: all 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-cancelar {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-content);
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+#registration-success,
+#registration-error {
+    
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: var(--font-content);
+
+} 
+
+.form-control:focus {
+
+    box-shadow: 0 0 0 5px var(--primary);
+    border-color: var(--secondary);
+
+}
+
+.form-check-input:checked {
+    
+    background-color: var(--primary);
+    border-color: var(--primary);
+    
+}

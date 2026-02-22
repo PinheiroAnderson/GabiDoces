@@ -1,0 +1,163 @@
+@import "./form.css";
+
+
+
+.form-acess {
+   
+    padding: 105px 0;
+    min-height: calc(100vh - 200px);
+    background-color: var(--light-pink);
+
+}
+
+#login-form {
+   
+    width: 100%; 
+    max-width: 380px; 
+    border: solid 3px var(--primary);
+    color: var(--secondary);
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(64, 30, 54, 0.2);
+   
+}
+
+#login-form h2 {
+    font-family: var(--font-title);
+    color: var(--secondary);
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+#login-form label {
+    font-family: var(--font-content);
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+button#login-button {
+    
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: var(--font-content);
+    transition: all 0.3s ease;
+
+}
+
+button#login-button:hover {
+    
+    background-color: var(--secondary);
+    color: var(--white);
+
+}
+
+button#google-login-button {
+    
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    background-color: var(--white);
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: var(--font-content);
+    transition: all 0.3s ease;
+
+}
+
+button#google-login-button:hover {
+    
+    background-color: var(--light-pink);
+    border-color: var(--secondary);
+
+}
+
+.login-section p {
+    
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--secondary);
+    font-family: var(--font-content);
+
+}
+
+#login-error {
+    
+    color: #dc3545;
+    margin-top: 10px;
+    font-family: var(--font-content);
+
+}
+
+.link-cadastro {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.link-cadastro:hover {
+    
+    color: var(--secondary);
+    text-decoration: underline; 
+
+}
+
+.link-esqueceu {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.link-esqueceu:hover {
+    
+    color: var(--secondary);
+    text-decoration: underline; 
+
+}
+
+h2 {
+    
+    color: var(--secondary);
+    margin-bottom: 20px; 
+    font-family: var(--font-title);
+
+}
+
+.form-check {
+    
+    display: flex;
+    min-height: 1.5rem;
+    margin-bottom: .125rem;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    font-family: var(--font-content);
+
+}
+
+.form-control:focus {
+
+    box-shadow: 0 0 0 5px var(--primary);
+    border-color: var(--secondary);
+    
+}
+
+.form-check-input:checked {
+    
+    background-color: var(--primary);
+    border-color: var(--primary);
+    
+}

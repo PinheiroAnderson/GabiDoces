@@ -1,0 +1,47 @@
+.white{
+    color: var(--white);
+}
+
+.bg-white{
+    background-color: var(--white);
+}
+
+.black{
+    color: var(--black);
+}
+
+.bg-black{
+    background-color: var(--black);
+}
+
+.primary{
+    color: var(--primary);
+}
+
+.bg-primary{
+    background-color: var(--primary);
+}
+
+.secondary{
+    color: var(--secondary);
+}
+
+.bg-secondary{
+    background-color: var(--secondary);
+}
+
+.light{
+    color: var(--light);
+}
+
+.bg-light{
+    background-color: var(--light);
+}
+
+.light-pink{
+    color: var(--light-pink);
+}
+
+.bg-light-pink{
+    background-color: var(--light-pink);
+}

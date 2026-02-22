@@ -1,0 +1,322 @@
+@import "./form.css";
+@import "./../components/cards.component/card.component.css";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+section,
+div,
+header,
+footer {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+header {
+    background-image: url(../img/bolo1.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+   
+}
+
+.logo img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: solid 4px var(--white);
+    
+}
+
+.navbox {
+    background-color: var(--shadow);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    height: 100%;
+    min-height: 400px;
+}
+
+.header-title,
+header .logo {
+    margin: 50px 25px;
+}
+
+.header-title {
+    font-size: 24px;
+    max-width: 500px;
+}
+
+.header-title h1 {
+    font-size: 56px;
+    font-family: var(--font-title);
+    color: var(--light-pink);
+    text-shadow: 2px 2px 4px var(--secondary);
+}
+
+.header-title p {
+    font-size: 18px;
+    font-family: var(--font-content);
+}
+
+.cards-container {
+    
+    height: calc(100vh - 68px);
+    
+}
+
+/* Estilo do contêiner de cards */
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+    
+    
+}
+
+.contact-map,
+.contact-form {
+
+    padding: 40px;
+    width: 40%;
+    color: var(--secondary);
+}
+
+.contact {
+
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.right {
+
+    display: flex;
+    justify-content: end;
+
+}
+
+p {
+
+    padding: 5px;
+
+}
+
+.contact-map iframe {
+
+    border-radius: 8px;
+    
+}
+
+/* Container principal do agendamento */
+.agendamento-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-image: url(../img/bolo2.png);
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+    
+}
+
+/* Sobreposição de gradiente */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(64, 30, 54, 0.8) 50%, rgba(209, 139, 184, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Texto de agendamento */
+.texto-agendamento {
+    padding: 20px;
+    color: #fff;
+    max-width: 500px;
+}
+
+.texto-agendamento p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-family: var(--font-content);
+}
+
+/* Botão de agendamento */
+.btn-agendamento {
+    padding: 15px 30px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-family: var(--font-content);
+}
+
+.btn-agendamento:hover {
+    background-color: var(--light-pink);
+}
+
+.comentarios-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px;
+    background-color: var(--light-pink);
+    
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    background-color: var(--light);
+    
+}
+
+.service-container h2 {
+    color: var(--secondary);
+    font-family: var(--font-title);
+    font-size: 48px;
+}
+
+.comentario {
+    max-width: 300px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.comentario p {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.img-placeholder img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Container da propaganda */
+.propaganda-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url('../img/bolo3.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/* Conteúdo do texto */
+.conteudo {
+    padding: 40px;
+    max-width: 600px;
+    background: rgba(64, 30, 54, 0.7);
+    color: #fff;
+}
+
+.conteudo h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--light-pink);
+    font-family: var(--font-title);
+}
+
+.conteudo p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: var(--white);
+    font-family: var(--font-content);
+}
+
+.contact-container {
+    background-color: var(--light-pink);
+    padding: 40px 0;
+}
+
+.contact-container h2,
+.contact-container h3,
+.contact-container h4,
+.contact-container h5,
+.contact-container h6 {
+    font-family: var(--font-title);
+}
+
+@media (max-width:768px) {
+    .header-content {
+
+        flex-direction: column-reverse;
+
+    }
+
+    .header-title,
+    .header .logo {
+
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .header-title h1 {
+        font-size: 36px;
+    }
+
+    .contact
+     {
+
+        flex-direction: column;
+
+    }
+
+    .contact-map,
+    .contact-form {
+
+        
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .comentarios-container,
+    .service-container {
+
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+
+    }
+
+    
+
+    
+}

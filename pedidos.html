@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazer Pedido - Gabriela Bolos e Doces</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/pedidos.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous" defer></script>
+
+  <script src="./js/main.js" type="module" defer></script>
+  <script src="./js/aplication/pedidos.js" type="module" defer></script>
+</head>
+
+<body>
+  <div id="navbar-component"></div>
+
+  <section class="pedidos-section">
+    <div class="container">
+      <h1 class="text-center mb-4">Faça seu Pedido</h1>
+      
+      <!-- Categorias -->
+      <ul class="nav nav-pills mb-4 justify-content-center" id="categoriaTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="bolos-tab" data-bs-toggle="pill" data-bs-target="#bolos" type="button" role="tab">
+            <img src="./img/bolo1.png" alt="Bolos" class="categoria-icon"> Bolos
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="docinhos-tab" data-bs-toggle="pill" data-bs-target="#docinhos" type="button" role="tab">
+            <img src="./img/docinhos.png" alt="Docinhos" class="categoria-icon"> Docinhos
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="cupcakes-tab" data-bs-toggle="pill" data-bs-target="#cupcakes" type="button" role="tab">
+            <img src="./img/cupcakes.png" alt="Cupcakes" class="categoria-icon"> Cupcakes
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="kits-tab" data-bs-toggle="pill" data-bs-target="#kits" type="button" role="tab">
+            <img src="./img/minibolo.png" alt="Kits" class="categoria-icon"> Kits Prontos
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="montekit-tab" data-bs-toggle="pill" data-bs-target="#montekit" type="button" role="tab">
+            <img src="./img/minibolo2.png" alt="Monte seu Kit" class="categoria-icon"> Monte seu Kit
+          </button>
+        </li>
+      </ul>
+
+      <!-- Conteúdo das Categorias -->
+      <div class="tab-content" id="categoriaTabsContent">
+        
+        <!-- Bolos -->
+        <div class="tab-pane fade show active" id="bolos" role="tabpanel">
+          <div class="produtos-grid">
+            <div class="produto-card">
+              <img src="./img/bolo1.png" alt="Bolo de Chocolate">
+              <h3>Bolo de Chocolate</h3>
+              <p>Delicioso bolo de chocolate com cobertura cremosa</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="bolo1_tamanho" value="P"> P (R$ 45)
+                </label>
+                <label>
+                  <input type="radio" name="bolo1_tamanho" value="M"> M (R$ 65)
+                </label>
+                <label>
+                  <input type="radio" name="bolo1_tamanho" value="G"> G (R$ 85)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/bolo2.png" alt="Bolo de Morango">
+              <h3>Bolo de Morango</h3>
+              <p>Bolo com camadas de morangos frescos e cream cheese</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="bolo2_tamanho" value="P"> P (R$ 50)
+                </label>
+                <label>
+                  <input type="radio" name="bolo2_tamanho" value="M"> M (R$ 70)
+                </label>
+                <label>
+                  <input type="radio" name="bolo2_tamanho" value="G"> G (R$ 90)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/bolo3.png" alt="Bolo de Cenoura">
+              <h3>Bolo de Cenoura</h3>
+              <p>Bolo de cenoura com cobertura de chocolate brigadeiro</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="bolo3_tamanho" value="P"> P (R$ 40)
+                </label>
+                <label>
+                  <input type="radio" name="bolo3_tamanho" value="M"> M (R$ 60)
+                </label>
+                <label>
+                  <input type="radio" name="bolo3_tamanho" value="G"> G (R$ 80)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Docinhos -->
+        <div class="tab-pane fade" id="docinhos" role="tabpanel">
+          <div class="produtos-grid">
+            <div class="produto-card">
+              <img src="./img/docinhos.png" alt="Docinhos Variados">
+              <h3>Docinhos Variados</h3>
+              <p>Mix de docinhos tradicionais (brigadeiro, beijinho, casadinho)</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="docinho1_tamanho" value="P"> P (20 unid - R$ 25)
+                </label>
+                <label>
+                  <input type="radio" name="docinho1_tamanho" value="M"> M (40 unid - R$ 45)
+                </label>
+                <label>
+                  <input type="radio" name="docinho1_tamanho" value="G"> G (60 unid - R$ 65)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/docinhos.png" alt="Brigadeiros">
+              <h3>Brigadeiros</h3>
+              <p>Brigadeiros gourmet variados (tradicional, coco, ninho)</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="docinho2_tamanho" value="P"> P (20 unid - R$ 28)
+                </label>
+                <label>
+                  <input type="radio" name="docinho2_tamanho" value="M"> M (40 unid - R$ 50)
+                </label>
+                <label>
+                  <input type="radio" name="docinho2_tamanho" value="G"> G (60 unid - R$ 72)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/docinhos.png" alt="Beijinhos">
+              <h3>Beijinhos</h3>
+              <p>Beijinhos com coco ralado e.nozes</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="docinho3_tamanho" value="P"> P (20 unid - R$ 22)
+                </label>
+                <label>
+                  <input type="radio" name="docinho3_tamanho" value="M"> M (40 unid - R$ 40)
+                </label>
+                <label>
+                  <input type="radio" name="docinho3_tamanho" value="G"> G (60 unid - R$ 58)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cupcakes -->
+        <div class="tab-pane fade" id="cupcakes" role="tabpanel">
+          <div class="produtos-grid">
+            <div class="produto-card">
+              <img src="./img/cupcakes.png" alt="Cupcakes Variados">
+              <h3>Cupcakes Variados</h3>
+              <p>Mix de cupcakes gourmet (baunilha, chocolate, morango)</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="cupcake1_tamanho" value="P"> P (6 unid - R$ 30)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake1_tamanho" value="M"> M (12 unid - R$ 55)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake1_tamanho" value="G"> G (24 unid - R$ 100)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/cupcakes.png" alt="Cupcakes de Chocolate">
+              <h3>Cupcakes de Chocolate</h3>
+              <p>Cupcakes de chocolate com cobertura de ganache</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="cupcake2_tamanho" value="P"> P (6 unid - R$ 32)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake2_tamanho" value="M"> M (12 unid - R$ 58)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake2_tamanho" value="G"> G (24 unid - R$ 105)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/cupcakes.png" alt="Cupcakes Red Velvet">
+              <h3>Cupcakes Red Velvet</h3>
+              <p>Cupcakes red velvet com cream cheese</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="cupcake3_tamanho" value="P"> P (6 unid - R$ 38)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake3_tamanho" value="M"> M (12 unid - R$ 68)
+                </label>
+                <label>
+                  <input type="radio" name="cupcake3_tamanho" value="G"> G (24 unid - R$ 125)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kits Prontos -->
+        <div class="tab-pane fade" id="kits" role="tabpanel">
+          <div class="produtos-grid">
+            <div class="produto-card">
+              <img src="./img/minibolo.png" alt="Kit Festinha">
+              <h3>Kit Festinha</h3>
+              <p>1 bolo + 20 docinhos + 6 cupcakes</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="kit1_tamanho" value="P"> P (R$ 120)
+                </label>
+                <label>
+                  <input type="radio" name="kit1_tamanho" value="M"> M (R$ 180)
+                </label>
+                <label>
+                  <input type="radio" name="kit1_tamanho" value="G"> G (R$ 250)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/minibolo2.png" alt="Kit aniversário">
+              <h3>Kit Aniversário</h3>
+              <p>1 bolo decorado + 40 docinhos + 12 cupcakes</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="kit2_tamanho" value="P"> P (R$ 180)
+                </label>
+                <label>
+                  <input type="radio" name="kit2_tamanho" value="M"> M (R$ 250)
+                </label>
+                <label>
+                  <input type="radio" name="kit2_tamanho" value="G"> G (R$ 350)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+            
+            <div class="produto-card">
+              <img src="./img/minibolo3.png" alt="Kit Corporativo">
+              <h3>Kit Corporativo</h3>
+              <p>30 cupcakes + 30 docinhos (ideal para eventos)</p>
+              <div class="tamanhos">
+                <label>
+                  <input type="radio" name="kit3_tamanho" value="P"> P (R$ 150)
+                </label>
+                <label>
+                  <input type="radio" name="kit3_tamanho" value="M"> M (R$ 220)
+                </label>
+                <label>
+                  <input type="radio" name="kit3_tamanho" value="G"> G (R$ 320)
+                </label>
+              </div>
+              <input type="number" class="quantidade" min="1" value="1" placeholder="Qtd">
+              <button class="btn-adicionar">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monte seu Kit -->
+        <div class="tab-pane fade" id="montekit" role="tabpanel">
+          <div class="monte-kit-container">
+            <h2 class="text-center mb-4">Monte Seu Próprio Kit</h2>
+            <p class="text-center mb-4">Escolha a quantidade de cada item e o tamanho</p>
+            
+            <div class="monte-kit-opcoes">
+              <div class="kit-item">
+                <h4>Bolos</h4>
+                <img src="./img/bolo1.png" alt="Bolo">
+                <div class="tamanhos">
+                  <label><input type="radio" name="monte_bolo_tamanho" value="P"> P</label>
+                  <label><input type="radio" name="monte_bolo_tamanho" value="M"> M</label>
+                  <label><input type="radio" name="monte_bolo_tamanho" value="G"> G</label>
+                </div>
+                <input type="number" class="quantidade" min="0" value="0" placeholder="Qtd">
+              </div>
+              
+              <div class="kit-item">
+                <h4>Docinhos</h4>
+                <img src="./img/docinhos.png" alt="Docinhos">
+                <div class="tamanhos">
+                  <label><input type="radio" name="monte_docinho_tamanho" value="P"> P (20un)</label>
+                  <label><input type="radio" name="monte_docinho_tamanho" value="M"> M (40un)</label>
+                  <label><input type="radio" name="monte_docinho_tamanho" value="G"> G (60un)</label>
+                </div>
+                <input type="number" class="quantidade" min="0" value="0" placeholder="Qtd">
+              </div>
+              
+              <div class="kit-item">
+                <h4>Cupcakes</h4>
+                <img src="./img/cupcakes.png" alt="Cupcakes">
+                <div class="tamanhos">
+                  <label><input type="radio" name="monte_cupcake_tamanho" value="P"> P (6un)</label>
+                  <label><input type="radio" name="monte_cupcake_tamanho" value="M"> M (12un)</label>
+                  <label><input type="radio" name="monte_cupcake_tamanho" value="G"> G (24un)</label>
+                </div>
+                <input type="number" class="quantidade" min="0" value="0" placeholder="Qtd">
+              </div>
+              
+              <div class="kit-item">
+                <h4>Mini Bolos</h4>
+                <img src="./img/minibolo.png" alt="Mini Bolos">
+                <div class="tamanhos">
+                  <label><input type="radio" name="monte_minibolo_tamanho" value="P"> P (4un)</label>
+                  <label><input type="radio" name="monte_minibolo_tamanho" value="M"> M (8un)</label>
+                  <label><input type="radio" name="monte_minibolo_tamanho" value="G"> G (16un)</label>
+                </div>
+                <input type="number" class="quantidade" min="0" value="0" placeholder="Qtd">
+              </div>
+            </div>
+            
+            <div class="observacoes">
+              <label for="observacoes">Observações:</label>
+              <textarea id="observacoes" rows="3" placeholder="Descreva detalhes do seu kit..."></textarea>
+            </div>
+            
+            <button class="btn-adicionar btn-kit">Adicionar Kit Personalizado</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrinho -->
+      <div class="carrinho-container mt-5">
+        <h2 class="text-center">Carrinho de Compras</h2>
+        <div class="carrinho-itens">
+          <table class="table" id="carrinho-table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Tamanho</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="carrinho-corpo">
+              <!-- Itens do carrinho serão adicionados aqui -->
+            </tbody>
+          </table>
+          <div class="carrinho-vazio text-center" id="carrinho-vazio">
+            <p>Seu carrinho está vazio</p>
+          </div>
+        </div>
+        <div class="carrinho-total text-end">
+          <h3>Total: R$ <span id="total-pedido">0,00</span></h3>
+        </div>
+        <div class="carrinho-actions text-center mt-3">
+          <button class="btn-limpar" id="btn-limpar">Limpar Carrinho</button>
+          <button class="btn-finalizar" id="btn-finalizar">Finalizar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Finalização -->
+  <div class="modal fade" id="finalizarModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Finalizar Pedido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-finalizacao">
+            <div class="mb-3">
+              <label for="data-entrega" class="form-label">Data de Entrega</label>
+              <input type="date" id="data-entrega" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="horario-entrega" class="form-label">Horário de Entrega</label>
+              <input type="time" id="horario-entrega" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="endereco-entrega" class="form-label">Endereço de Entrega</label>
+              <textarea id="endereco-entrega" class="form-control" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="pagamento" class="form-label">Forma de Pagamento</label>
+              <select id="pagamento" class="form-select" required>
+                <option value="">Selecione</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="debito">Cartão de Débito</option>
+                <option value="credito">Cartão de Crédito</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="confirmar-pedido">Confirmar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+.card {
+    background-color: var(--white);
+    color: var(--secondary);
+    padding: 20px;
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    width: 280px;
+    text-align: center;
+    margin: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(64, 30, 54, 0.15);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(64, 30, 54, 0.25);
+}
+
+.card h3, .card h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: var(--font-title);
+    color: var(--secondary);
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-family: var(--font-content);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-encomendar {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-content);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+
+.btn-encomendar:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.card:hover {
+    background-color: var(--light-pink);
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "imageUrl": "./img/bolo1.png",
+        "title": "Bolo de Chocolate",
+        "description": "Delicioso bolo de chocolate com cobertura cremosa"
+    },
+    {
+        "imageUrl": "./img/bolo2.png",
+        "title": "Bolo de Morango",
+        "description": "Bolo camadas com morangos frescos e cream cheese"
+    },
+    {
+        "imageUrl": "./img/bolo3.png",
+        "title": "Bolo de Cenoura",
+        "description": "Bolo de cenoura com cobertura de chocolate"
+    },
+    {
+        "imageUrl": "./img/cupcakes.png",
+        "title": "Cupcakes Variados",
+        "description": "Cupcakes gourmet com diversos sabores"
+    },
+    {
+        "imageUrl": "./img/docinhos.png",
+        "title": "Docinhos Finos",
+        "description": "Docinhos tradicionais para festas e eventos"
+    },
+    {
+        "imageUrl": "./img/minibolo.png",
+        "title": "Mini Bolos",
+        "description": "Mini bolos decorados perfeitos para.presentear"
+    }
+]
