@@ -2,6 +2,39 @@
 
 import { auth, onAuthStateChanged, signOut } from "../../js/infra/firebase.js";
 
+// Função para mostrar modal de sucesso
+function mostrarSucesso(mensagem) {
+    const modalElement = document.getElementById('sucessoModal');
+    if (!modalElement) {
+        console.log(mensagem);
+        return;
+    }
+    document.getElementById('sucesso-mensagem').textContent = mensagem;
+    modalElement.querySelector('.modal-header').className = 'modal-header bg-success text-white';
+    modalElement.querySelector('.modal-title').textContent = 'Sucesso!';
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+}
+
+// Função para mostrar modal de erro
+function mostrarErro(mensagem) {
+    const modalElement = document.getElementById('sucessoModal');
+    if (!modalElement) {
+        console.error(mensagem);
+        return;
+    }
+    document.getElementById('sucesso-mensagem').textContent = mensagem;
+    modalElement.querySelector('.modal-header').className = 'modal-header bg-danger text-white';
+    modalElement.querySelector('.modal-title').textContent = 'Erro!';
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+    
+    modalElement.addEventListener('hidden.bs.modal', function() {
+        modalElement.querySelector('.modal-header').className = 'modal-header bg-success text-white';
+        modalElement.querySelector('.modal-title').textContent = 'Sucesso!';
+    });
+}
+
 export function navBarComponentTemplate() {
 
     const localTemplate = 'components/nav.component/nav.component.html'
@@ -79,7 +112,7 @@ function verificarAutenticacao() {
                     window.location.href = 'index.html';
                 }).catch((error) => {
                     console.error('Erro ao fazer logout:', error);
-                    alert('Erro ao fazer logout. Tente novamente.');
+                    mostrarErro('Erro ao fazer logout. Tente novamente.');
                 });
             });
         }
