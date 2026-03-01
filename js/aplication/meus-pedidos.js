@@ -1,6 +1,20 @@
 import { auth, db, onAuthStateChanged } from "../infra/firebase.js";
 import { collection, query, getDocs, orderBy, doc, deleteDoc, where } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+// Função para mostrar modal de sucesso
+function mostrarSucesso(mensagem) {
+    document.getElementById('sucesso-mensagem').textContent = mensagem;
+    const modal = new bootstrap.Modal(document.getElementById('sucessoModal'));
+    modal.show();
+}
+
+// Função para mostrar modal de erro
+function mostrarErro(mensagem) {
+    document.getElementById('erro-mensagem').textContent = mensagem;
+    const modal = new bootstrap.Modal(document.getElementById('erroModal'));
+    modal.show();
+}
+
 // Carregar pedidos do usuário
 async function carregarPedidos() {
     return new Promise((resolve, reject) => {
@@ -197,27 +211,38 @@ document.head.appendChild(style);
 
 // Função para excluir pedido
 window.excluirPedido = async function(pedidoId) {
-    if (!confirm('Tem certeza que deseja excluir este pedido?')) {
-        return;
-    }
+    const modal = new bootstrap.Modal(document.getElementById('confirmarExcluirModal'));
+    modal.show();
     
-    const user = auth.currentUser;
-    const clienteId = window.clienteIdAtual;
+    // Configurar o botão de confirmação
+    const btnConfirmar = document.getElementById('confirmar-excluir-pedido');
+    const confirmarExclusao = async function() {
+        const user = auth.currentUser;
+        const clienteId = window.clienteIdAtual;
+        
+        if (!user || !clienteId) {
+            mostrarErro('Você precisa estar logado para excluir um pedido.');
+            modal.hide();
+            btnConfirmar.removeEventListener('click', confirmarExclusao);
+            return;
+        }
+        
+        try {
+            const docRef = doc(db, "client", clienteId, "pedidos", pedidoId);
+            await deleteDoc(docRef);
+            mostrarSucesso('Pedido excluído com sucesso!');
+            carregarPedidos();
+            modal.hide();
+        } catch (error) {
+            console.error("Erro ao excluir pedido:", error);
+            mostrarErro('Erro ao excluir pedido. Tente novamente.');
+            modal.hide();
+        }
+        
+        btnConfirmar.removeEventListener('click', confirmarExclusao);
+    };
     
-    if (!user || !clienteId) {
-        alert('Você precisa estar logado para excluir um pedido.');
-        return;
-    }
-    
-    try {
-        const docRef = doc(db, "client", clienteId, "pedidos", pedidoId);
-        await deleteDoc(docRef);
-        alert('Pedido excluído com sucesso!');
-        carregarPedidos();
-    } catch (error) {
-        console.error("Erro ao excluir pedido:", error);
-        alert('Erro ao excluir pedido. Tente novamente.');
-    }
+    btnConfirmar.addEventListener('click', confirmarExclusao);
 };
 
 // Event listeners

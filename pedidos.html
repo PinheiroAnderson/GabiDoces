@@ -371,20 +371,22 @@
       <div class="carrinho-container mt-5">
         <h2 class="text-center">Carrinho de Compras</h2>
         <div class="carrinho-itens">
-          <table class="table" id="carrinho-table">
-            <thead>
-              <tr>
-                <th>Produto</th>
-                <th>Tamanho</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="carrinho-corpo">
-              <!-- Itens do carrinho serão adicionados aqui -->
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table" id="carrinho-table">
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Tamanho</th>
+                  <th>Quantidade</th>
+                  <th>Preço</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="carrinho-corpo">
+                <!-- Itens do carrinho serão adicionados aqui -->
+              </tbody>
+            </table>
+          </div>
           <div class="carrinho-vazio text-center" id="carrinho-vazio">
             <p>Seu carrinho está vazio</p>
           </div>
@@ -441,6 +443,42 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal de Sucesso -->
+  <div class="modal fade" id="sucessoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Sucesso!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p id="sucesso-mensagem"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+  <!-- Modal de Confirmação -->
+  <div class="modal fade" id="confirmarLimparModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-dark">
+          <h5 class="modal-title">Confirmar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Tem certeza que deseja limpar o carrinho?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-warning" id="confirmar-limpar">Sim, limpar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </html>

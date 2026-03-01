@@ -32,7 +32,7 @@ function getFormClient() {
 function mostrarSucesso(mensagem, redirecionar = null) {
     const modalElement = document.getElementById('sucessoModal');
     if (!modalElement) {
-        alert(mensagem);
+        console.log(mensagem);
         if (redirecionar) window.location.href = redirecionar;
         return;
     }
@@ -51,7 +51,7 @@ function mostrarSucesso(mensagem, redirecionar = null) {
 function mostrarErro(mensagem) {
     const modalElement = document.getElementById('sucessoModal');
     if (!modalElement) {
-        alert(mensagem);
+        console.error(mensagem);
         return;
     }
     document.getElementById('sucesso-mensagem').textContent = mensagem;

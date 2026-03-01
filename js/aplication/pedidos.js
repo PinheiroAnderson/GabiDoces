@@ -5,6 +5,19 @@ let carrinho = [];
 import { auth, db, onAuthStateChanged } from "../infra/firebase.js";
 import { addDoc, collection, serverTimestamp, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+// Função para mostrar modal de sucesso
+function mostrarSucesso(mensagem, redirecionar = null) {
+    document.getElementById('sucesso-mensagem').textContent = mensagem;
+    const modal = new bootstrap.Modal(document.getElementById('sucessoModal'));
+    modal.show();
+    
+    if (redirecionar) {
+        modal._element.addEventListener('hidden.bs.modal', function() {
+            window.location.href = redirecionar;
+        });
+    }
+}
+
 // Verificar se usuário está logado
 onAuthStateChanged(auth, (user) => {
     if (!user) {
@@ -46,27 +59,7 @@ const precos = {
 // Número do WhatsApp da Gabriela (substitua pelo número real)
 const whatsappNumero = '5521964681384';
 
-// Função para mostrar modal de sucesso
-function mostrarSucesso(mensagem) {
-    document.getElementById('sucesso-mensagem').textContent = mensagem;
-    const modal = new bootstrap.Modal(document.getElementById('sucessoModal'));
-    modal.show();
-}
 
-// Função para mostrar modal de erro
-function mostrarErro(mensagem) {
-    document.getElementById('sucesso-mensagem').textContent = mensagem;
-    const modalElement = document.getElementById('sucessoModal');
-    modalElement.querySelector('.modal-header').className = 'modal-header bg-danger text-white';
-    modalElement.querySelector('.modal-title').textContent = 'Erro!';
-    const modal = new bootstrap.Modal(modalElement);
-    modal.show();
-    
-    modalElement.addEventListener('hidden.bs.modal', function() {
-        modalElement.querySelector('.modal-header').className = 'modal-header bg-success text-white';
-        modalElement.querySelector('.modal-title').textContent = 'Sucesso!';
-    });
-}
 
 // Função para adicionar ao carrinho
 function adicionarAoCarrinho(produto, tamanho, quantidade, categoria) {
@@ -112,11 +105,11 @@ function atualizarCarrinho() {
         
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${item.nome}</td>
-            <td>${item.tamanho}</td>
-            <td>${item.quantidade}</td>
-            <td>R$ ${item.precoTotal.toFixed(2).replace('.', ',')}</td>
-            <td>
+            <td data-label="Produto">${item.nome}</td>
+            <td data-label="Tamanho">${item.tamanho}</td>
+            <td data-label="Quantidade">${item.quantidade}</td>
+            <td data-label="Preço">R$ ${item.precoTotal.toFixed(2).replace('.', ',')}</td>
+            <td data-label="Ações">
                 <button class="btn-excluir" onclick="removerDoCarrinho(${item.id})">Excluir</button>
             </td>
         `;
@@ -391,6 +384,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             adicionarAoCarrinho(produto, radioTamanho.value, quantidade, categoria);
+            
+            // Limpar seleção do card
+            card.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            card.querySelector('.quantidade').value = 1;
+            
             mostrarSucesso('Item adicionado ao carrinho!');
         });
     });
@@ -455,6 +453,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (temItem) {
+                // Limpar todas as selections do monte kit
+                container.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+                container.querySelectorAll('.quantidade').forEach(qtd => qtd.value = 1);
+                
                 mostrarSucesso('Kit personalizado adicionado ao carrinho!');
             } else {
                 mostrarErro('Por favor, selecione pelo menos um item para o seu kit!');
@@ -466,10 +468,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnLimpar = document.getElementById('btn-limpar');
     if (btnLimpar) {
         btnLimpar.addEventListener('click', function() {
-            if (confirm('Tem certeza que deseja limpar o carrinho?')) {
+            const modal = new bootstrap.Modal(document.getElementById('confirmarLimparModal'));
+            modal.show();
+            
+            // Configurar o botão de confirmação
+            const btnConfirmar = document.getElementById('confirmar-limpar');
+            const confirmarLimpar = function() {
                 limparCarrinho();
                 mostrarSucesso('Carrinho limpo com sucesso!');
-            }
+                modal.hide();
+                // Remover o event listener após execução
+                btnConfirmar.removeEventListener('click', confirmarLimpar);
+            };
+            btnConfirmar.addEventListener('click', confirmarLimpar);
         });
     }
     
